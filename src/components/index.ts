@@ -6,3 +6,6 @@ export * from './Header/Header'
 export * from './Header/Header.module.css'
 
 export * from './StarsRating/StarsRating'
+
+export * from './SearchContainer/SearchContainer'
+export * from './SearchContainer/SearchForm'

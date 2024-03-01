@@ -14,7 +14,7 @@ const MoviesListCard: FC<IProps> = ({movie}) => {
             <div><img src={poster_href} alt=""/></div>
             <div>{original_title}</div>
             <div>{vote_average}</div>
-            <StarsRating/>
+            <StarsRating vote_average={vote_average}/>
 
         </div>
     );

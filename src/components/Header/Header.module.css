@@ -2,8 +2,16 @@
     background-color: black;
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     font-size: 48px;
     height: 10vh;
+}
+a{
+    text-decoration: none;
+    color: #78d6ff;
+}
+
+a:hover{
+    text-decoration: underline;
 }

@@ -5,8 +5,9 @@ import {IMovie} from "../interfaces/IMovie";
 import {IApiRes} from "../interfaces/IApiRes";
 
 const movieService={
-    getAll:():IRes<IApiRes>=>apiService.get(urls.movies.base),
-    getById:(id:number):IRes<IMovie>=>apiService.get(urls.movies.byId(id))
+    getAll:(page:string ='1'):IRes<IApiRes>=>apiService.get(urls.movies.base, {params:{page}}),
+    getById:(id:number):IRes<IApiRes>=>apiService.get(urls.movies.byId(id)),
+    search:(query:string, page:string ='1'):IRes<IApiRes>=>apiService.get(urls.movies.search, {params:{query,page}}),
 }
 
 export {
