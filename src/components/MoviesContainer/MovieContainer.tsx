@@ -20,7 +20,6 @@ const MovieContainer: FC<IProps> = () => {
         })
 
     }, [page]);
-    console.log(page)
 
     return (
         <div>

@@ -5,8 +5,10 @@ const usePageQuery = () => {
     const page:string=query.get('page')
     return {
         page,
+        defaultPage:()=>{
+            setQuery({...query, page: '1'})        },
         changePage : (newPage:string)=>{
-            setQuery({ ...query, page: newPage})
+            setQuery({...query, page: newPage})
         },
     };
 };

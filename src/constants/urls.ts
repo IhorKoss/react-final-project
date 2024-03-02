@@ -9,12 +9,11 @@ const list='/list'
 const urls={
     movies:{
         base:`${discover}${movie}`,
-        byId:(id:number):string=>`${movie}/${id}`,
+        byId:(id:string):string=>`${movie}/${id}`,
         search:`${search}${movie}`
     },
     genres:{
         base:`${genre}${movie}${list}`,
-        byId:(id:number):string=>`${genre}/${id}`
     }
 }
 

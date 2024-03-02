@@ -1,4 +1,3 @@
-
 export interface IMovie {
     id:number,
     original_language:string,

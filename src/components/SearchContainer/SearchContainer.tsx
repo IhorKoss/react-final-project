@@ -10,7 +10,6 @@ interface IProps extends PropsWithChildren {
 }
 const SearchContainer: FC<IProps> = () => {
     const {searchRes}=useAppContext()
-    console.log(searchRes)
     return (
         <div>
             Go find smth
