@@ -1,8 +1,10 @@
 import {FC, PropsWithChildren, useEffect, useState} from "react";
+
 import {IGenre, IMovie} from "../../interfaces";
 import {genreService} from "../../services/genreService";
 import {GenresButton} from "./GenresButton";
 import {GenresMovieList} from "./GenresMovieList";
+import css from'./Genres.module.css'
 
 interface IProps extends PropsWithChildren {
 }
@@ -13,7 +15,7 @@ const GenresContainer: FC<IProps> = () => {
     }, []);
     return (
         <div>
-            {genres.map(genre=><GenresButton key={genre.id} genre={genre}/>)}
+            <div className={css.GenreBtnContainer}>{genres.map(genre=><GenresButton key={genre.id} genre={genre}/>)}</div>
             <GenresMovieList/>
         </div>
     );

@@ -1,10 +1,11 @@
 import {FC, PropsWithChildren, useEffect, useState} from "react";
+import {useSearchParams} from "react-router-dom";
+
 import {IMovie} from "../../interfaces";
 import {movieService} from "../../services";
-import {useSearchParams} from "react-router-dom";
 import {useAppContext, usePageQuery} from "../../hook";
 import {MoviesList} from "../MoviesContainer/MoviesList";
-
+import css from './Genres.module.css'
 interface IProps extends PropsWithChildren {
 
 }
@@ -29,13 +30,16 @@ const GenresMovieList: FC<IProps> = () => {
     console.log(with_genres)
     console.log(page)
     return (
-        <div>
-            <button
-                onClick={() => changePage(JSON.stringify(parseInt(page) - 1) )}
-                disabled={!(parseInt(page)-1)}>Previous</button>
-            <button
-                onClick={() => changePage(JSON.stringify(parseInt(page) + 1) )}
-                disabled={!(parseInt(page)+1)}>Next</button>
+        <div className={css.MovieListContainer}>
+            <div className={css.PageChange}>
+                <button
+                    onClick={() => changePage(JSON.stringify(parseInt(page) - 1) )}
+                    disabled={!(parseInt(page)-1)}>Previous</button>
+                <div>{page}</div>
+                <button
+                    onClick={() => changePage(JSON.stringify(parseInt(page) + 1) )}
+                    disabled={!(parseInt(page)+1)}>Next</button>
+            </div>
             {movies&&<MoviesList movies={movies}/>}
         </div>
     );

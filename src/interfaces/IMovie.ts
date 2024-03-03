@@ -7,5 +7,6 @@ export interface IMovie {
     release_date:string,
     vote_average:number,
     vote_count:number
-    adult:boolean
+    adult:boolean,
+    overview:string
 }

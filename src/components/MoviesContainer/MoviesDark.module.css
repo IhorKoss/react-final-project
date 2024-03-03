@@ -1,0 +1,100 @@
+.MovieContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.MovieListContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1c1c2f;
+}
+.MovieCard{
+    font-size: 20px;
+    background-color: #f5f5f5;
+    height: 60vh;
+    width: 20vw;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5vh;
+    transition: 500ms;
+}
+.MovieCard h4{
+    margin: 0;
+}
+.MovieCard:hover{
+    box-shadow:
+            inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+            0 0 0 0px rgb(255, 255, 255),
+            0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    transition: 350ms;
+    /*color: white;*/
+}
+.PosterContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Poster{
+    width: 90%;
+    border-radius: 10px;
+}
+.PageChange{
+    margin: 2vh 0;
+    width: 20vw;
+    justify-content: space-around;
+    display:flex;
+    flex-direction: row;
+}
+/*==================================================*/
+.MovieDetailsContainer{
+    display: flex;
+}
+.MovieDetailsData{
+    margin-left: 4vw;
+    margin-top:5vh;
+    height: 80vh;
+    width: 60vw;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+}
+.MovieDetailsData h2{
+    font-size: 52px;
+    margin: 5vh 2vw 2vh 2vw;
+
+}
+.MovieDetailsData h4{
+    font-size: 36px;
+    margin: 5vh 2vw 2vh 2vw;
+}
+.Rating{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2E8BC0;
+    border-radius: 10px;
+    color: white;
+    height: 7%;
+    width: 40%;
+    padding: 0 1vw;
+    margin: 2vh 2vw 2vh 2vw;
+}
+
+.MovieDetailsOverview{
+    font-size: 22px;
+    margin: 2vh 2vw 2vh 2vw;
+}
+.MovieDetailsPoster{
+    width: 30vw;
+    border-radius: 15px;
+}
+.MovieDetailsPosterContainer{
+    width: 30vw;
+    height: 80vh;
+    margin-left: 3vw;
+    margin-top: 5vh;
+}
+/*==================================================*/

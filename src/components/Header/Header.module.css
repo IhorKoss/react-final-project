@@ -1,17 +1,74 @@
 .Header{
-    background-color: black;
+    background-color: #050A30;
     color: white;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 48px;
     height: 10vh;
+}
+.Logo{
+    height: 12vh;
 }
 a{
     text-decoration: none;
-    color: #78d6ff;
+    color: #2E8BC0;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 500ms;
+
 }
 
 a:hover{
-    text-decoration: underline;
+    border: 0.5vh #2E8BC0 solid;
+    box-sizing: border-box;
+    transition: 500ms;
+}
+
+.NavContainer{
+    height: 10vh;
+    width: 35vw;
+    display: flex;
+
+}
+.ThemeSwitcher{
+    color: #2E8BC0;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    height: 6vh;
+    width: 15vw;
+    background-color: white;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    transition: 500ms;
+}
+.ThemeSwitcher img{
+    width: 25%;
+    margin-left: 1vw;
+}
+
+.ThemeSwitcher:hover{
+    background-color: #c1e6ff;
+}
+
+.CentreBtn{
+    margin-top: 2vh;
+    height: 6vh;
+    width: 15vw;
+    background-color: white;
+}
+
+.RightBtn{
+    margin-top: 2vh;
+    height: 6vh;
+    width: 8vw;
+    background-color: white;
+    border-radius: 0 10px 10px 0;
+}
+.active{
+    background-color: rgba(46, 139, 192, 0.58);
 }
