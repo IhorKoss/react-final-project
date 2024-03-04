@@ -15,7 +15,7 @@ interface IProps extends PropsWithChildren {
 
 const GenresMovieList: FC<IProps> = () => {
     const [movies, setMovies] = useState<IMovie[]>([]);
-    const [query,setQuery]=useSearchParams();
+    const [,setQuery]=useSearchParams();
     const {with_genres,theme}=useAppContext()
     const {page,changePage,defaultPage}=usePageQuery();
     useEffect(() => {

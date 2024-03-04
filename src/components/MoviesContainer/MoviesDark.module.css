@@ -26,6 +26,9 @@
 .MovieCard h4{
     margin: 0;
 }
+.MovieCardRelease{
+    font-size: 16px;
+}
 .MovieCard:hover{
     box-shadow:
             inset 0 -3em 3em rgba(255, 255, 255, 0.1),

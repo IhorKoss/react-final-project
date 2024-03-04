@@ -1,9 +1,8 @@
-import {FC, PropsWithChildren, useEffect, useState} from "react";
+import {FC, PropsWithChildren} from "react";
 
 import {IGenre} from "../../interfaces";
 import {useAppContext, usePageQuery} from "../../hook";
 import css from'./Genres.module.css'
-import dark from './GenresDark.module.css'
 
 interface IProps extends PropsWithChildren {
     genre:IGenre

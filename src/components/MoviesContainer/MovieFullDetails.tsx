@@ -10,7 +10,7 @@ interface IProps extends PropsWithChildren {
 }
 
 const MovieFullDetails: FC<IProps> = ({movie}) => {
-    const {original_title,poster_path,vote_average,adult,original_language,vote_count,tagline,overview,}=movie;
+    const {original_title,poster_path,vote_average,adult,vote_count,tagline,overview,}=movie;
     const poster_href=`https://image.tmdb.org/t/p/w500${poster_path}`
     const {theme}=useAppContext()
 
@@ -19,10 +19,10 @@ const MovieFullDetails: FC<IProps> = ({movie}) => {
             <div className={css.MovieDetailsPosterContainer}><img src={poster_href} alt="" className={css.MovieDetailsPoster}/></div>
             <div className={theme?css.MovieDetailsData:dark.MovieDetailsData}>
                 <h2>{original_title}</h2>
-                <h4>"{tagline}"</h4>
-                <h4>"Language{original_language}"</h4>
+                <h4>"{tagline?tagline:'None'}"</h4>
+                <div className={adult?css.MovieDetailsAdult:css.MovieDetailsChild}>{adult?'Only adults':'For everyone'}</div>
                 <div className={theme?css.Rating:dark.Rating}>
-                    <div>Rates:{vote_count}</div>
+                    <div>Rates: {vote_count}</div>
                     <StarsRating vote_average={vote_average}/>
                 </div>
                 <div className={theme?css.MovieDetailsOverview:dark.MovieDetailsOverview}>{overview}</div>

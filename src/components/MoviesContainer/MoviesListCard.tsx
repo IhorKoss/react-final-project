@@ -21,7 +21,7 @@ const MoviesListCard: FC<IProps> = ({movie}) => {
         <div className={theme?css.MovieCard:dark.MovieCard}>
             <div onClick={()=>navigate(`/movies/${id.toString()}`)} className={css.PosterContainer}><img src={poster_href} alt={original_title} className={css.Poster}/></div>
             <h4>{original_title}</h4>
-            <div>Released: {release_date.replaceAll('-','.')}</div>
+            <div className={theme?css.MovieCardRelease:dark.MovieCardRelease}>Release: {release_date.replaceAll('-','.')}</div>
             <StarsRating vote_average={vote_average}/>
         </div>
     );

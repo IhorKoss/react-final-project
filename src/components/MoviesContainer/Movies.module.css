@@ -24,6 +24,9 @@
 .MovieCard h4{
     margin: 0;
 }
+.MovieCardRelease{
+    font-size: 16px;
+}
 .MovieCard:hover{
     box-shadow:
             inset 0 -3em 3em rgba(0, 0, 0, 0.1),
@@ -106,6 +109,30 @@
 .MovieDetailsPoster{
     width: 30vw;
     border-radius: 15px;
+}
+.MovieDetailsAdult{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2vw;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    height: 4vh;
+    width: 10vw;
+    border-radius: 100vh;
+}
+.MovieDetailsChild{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2vw;
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    height: 4vh;
+    width: 10vw;
+    border-radius: 100vh;
 }
 .MovieDetailsPosterContainer{
     width: 30vw;
