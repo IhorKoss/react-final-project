@@ -6,6 +6,8 @@ import {movieService} from "../../services";
 import {useAppContext, usePageQuery} from "../../hook";
 import {MoviesList} from "../MoviesContainer/MoviesList";
 import css from './Genres.module.css'
+import dark from './GenresDark.module.css'
+
 interface IProps extends PropsWithChildren {
 
 }
@@ -14,7 +16,7 @@ interface IProps extends PropsWithChildren {
 const GenresMovieList: FC<IProps> = () => {
     const [movies, setMovies] = useState<IMovie[]>([]);
     const [query,setQuery]=useSearchParams();
-    const {with_genres}=useAppContext()
+    const {with_genres,theme}=useAppContext()
     const {page,changePage,defaultPage}=usePageQuery();
     useEffect(() => {
         movieService.byGenre(with_genres,page).then(({data})=>{
@@ -30,8 +32,8 @@ const GenresMovieList: FC<IProps> = () => {
     console.log(with_genres)
     console.log(page)
     return (
-        <div className={css.MovieListContainer}>
-            <div className={css.PageChange}>
+        <div className={theme?css.MovieListContainer:dark.MovieListContainer}>
+            <div className={theme?css.PageChange:dark.PageChange}>
                 <button
                     onClick={() => changePage(JSON.stringify(parseInt(page) - 1) )}
                     disabled={!(parseInt(page)-1)}>Previous</button>

@@ -5,6 +5,8 @@
     justify-content: space-around;
     align-items: center;
     height: 10vh;
+    border-bottom: 0.2vh white solid;
+    box-sizing: border-box ;
 }
 .Logo{
     height: 12vh;
@@ -21,7 +23,7 @@ a{
 }
 
 a:hover{
-    border: 0.5vh #2E8BC0 solid;
+    border: 0.5vh #ffffff solid;
     box-sizing: border-box;
     transition: 500ms;
 }
@@ -33,7 +35,7 @@ a:hover{
 
 }
 .ThemeSwitcher{
-    color: #2E8BC0;
+    color: #ffffff;
     font-size: 24px;
     display: flex;
     justify-content: center;
@@ -41,7 +43,7 @@ a:hover{
     margin-top: 2vh;
     height: 6vh;
     width: 15vw;
-    background-color: white;
+    background-color: #2E8BC0;
     border-radius: 10px 0 0 10px;
     border: none;
     transition: 500ms;
@@ -51,21 +53,18 @@ a:hover{
     margin-left: 1vw;
 }
 
-
 .CentreBtn{
     margin-top: 2vh;
     height: 6vh;
     width: 15vw;
-    background-color: white;
+    background-color: #2E8BC0;
+    color: white;
 }
 
 .RightBtn{
     margin-top: 2vh;
     height: 6vh;
     width: 8vw;
-    background-color: white;
+    background-color: #2E8BC0;
     border-radius: 0 10px 10px 0;
-}
-.active{
-    background-color: rgba(46, 139, 192, 0.58);
 }

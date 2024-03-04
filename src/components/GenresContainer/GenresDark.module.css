@@ -15,6 +15,7 @@
 }
 
 .GenreBtnContainer{
+    background-color: #000038;
     height: 15vh;
     display: flex;
     justify-content: space-around;
@@ -23,6 +24,7 @@
 .PageChange{
     margin: 2vh 0;
     width: 30vw;
+    color: white;
     justify-content: space-around;
     display:flex;
     flex-direction: row;
@@ -42,10 +44,11 @@
     font-size: 18px;
 }
 .PageChange button:disabled{
-    background-color: #a9ddff;
+    background-color: #003a60;
 }
 .MovieListContainer{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #000038;
 }

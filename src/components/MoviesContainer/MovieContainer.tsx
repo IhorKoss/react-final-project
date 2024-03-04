@@ -26,12 +26,12 @@ const MovieContainer: FC<IProps> = () => {
 
     return (
         <div className={theme?css.MovieListContainer:dark.MovieListContainer}>
-            <div className={css.PageChange}>
-                <button className={css.PrevBtn}
+            <div className={theme?css.PageChange:dark.PageChange}>
+                <button
                         onClick={() => changePage(JSON.stringify(parseInt(page) - 1) )}
                         disabled={!(parseInt(page)-1)}>Previous</button>
                 <div>{page}</div>
-                <button className={css.PrevBtn}
+                <button
                         onClick={() => changePage(JSON.stringify(parseInt(page) + 1) )}
                         disabled={!(parseInt(page)+1)}>Next</button>
             </div>

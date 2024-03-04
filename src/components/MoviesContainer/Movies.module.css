@@ -43,10 +43,27 @@
 }
 .PageChange{
     margin: 2vh 0;
-    width: 20vw;
+    width: 30vw;
     justify-content: space-around;
     display:flex;
     flex-direction: row;
+    font-size: 24px;
+
+}
+.PageChange button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    width: 10vw;
+    background-color: #2E8BC0;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+}
+.PageChange button:disabled{
+    background-color: #a9ddff;
 }
 /*==================================================*/
 .MovieDetailsContainer{

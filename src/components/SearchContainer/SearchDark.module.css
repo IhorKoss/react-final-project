@@ -1,10 +1,19 @@
+.SearchMoviesContainerEmpty{;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000038;
+    height: 90vh;
+    font-size: 36px;
+    color: white;
+}
 .SearchMoviesContainer{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.SearchMoviesContainer{
+    background-color: #000038;
     font-size: 36px;
+    color: white;
 }
 .SearchForm{
     margin-top: 2vh;
@@ -15,6 +24,8 @@
     border: #2E8BC0 solid;
     border-radius: 10px 0 0 10px;
     box-sizing: border-box;
+    background-color: #000038;
+    color: white;
 }
 .SearchForm input:focus {
     outline: none;
@@ -56,5 +67,5 @@
     font-size: 18px;
 }
 .PageChange button:disabled{
-    background-color: #a9ddff;
+    background-color: #003a60;
 }
