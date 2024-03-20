@@ -19,7 +19,7 @@ const Header = () => {
             <div className={css.NavContainer}>
                 <div className={theme?css.ThemeSwitcher:dark.ThemeSwitcher} onClick={themeChange}><img src={theme?sun:moon} alt=""/>{theme?'Light':'Dark'}</div>
                 <NavLink to={'/movies'} className={theme?css.CentreBtn:dark.CentreBtn}>Homepage</NavLink>
-                <NavLink to={'/genres'} className={theme?css.CentreBtn:dark.CentreBtn}>Gennres</NavLink>
+                <NavLink to={'/genres'} className={theme?css.CentreBtn:dark.CentreBtn}>Genres</NavLink>
                 <NavLink to={'/search'} className={theme?css.RightBtn:dark.RightBtn}><img src={theme?searchIcon:whiteSearchIcon} alt="Search" style={{height:'6vh'}}/></NavLink>
             </div>
         </div>
