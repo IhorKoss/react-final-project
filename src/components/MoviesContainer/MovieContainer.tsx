@@ -1,27 +1,22 @@
 import {FC, PropsWithChildren, useEffect, useState} from "react";
 
-import {IMovie} from "../../interfaces";
-import {movieService} from "../../services";
 import {MoviesList} from "./MoviesList";
-import {useAppContext, usePageQuery} from "../../hook";
+import {useAppContext, useAppDispatch, useAppSelector, usePageQuery} from "../../hook";
 import css from './Movies.module.css'
 import dark from './MoviesDark.module.css'
+import {movieActions} from "../../store";
 
 interface IProps extends PropsWithChildren {
 
 }
 
 const MovieContainer: FC<IProps> = () => {
-    const [movies, setMovies] = useState<IMovie[]>([])
+    const{movies}=useAppSelector(state=>state.movies)
     const {page,changePage}=usePageQuery();
     const {theme}=useAppContext()
-
-
+    const dispatch=useAppDispatch()
     useEffect(() => {
-        movieService.getAll(page).then(({data})=>{
-            setMovies(data.results);
-        })
-
+        dispatch(movieActions.getAll({page}))
     }, [page]);
 
     return (

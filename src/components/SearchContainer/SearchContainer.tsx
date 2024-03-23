@@ -1,8 +1,8 @@
-import {FC, PropsWithChildren, useEffect, useState} from "react";
+import {FC, PropsWithChildren} from "react";
 
 import css from './Search.module.css'
 import dark from './SearchDark.module.css'
-import {useAppContext} from "../../hook";
+import {useAppContext, useAppSelector} from "../../hook";
 import {SearchForm} from "./SearchForm";
 import {MoviesList} from "../MoviesContainer/MoviesList";
 
@@ -10,12 +10,14 @@ interface IProps extends PropsWithChildren {
 
 }
 const SearchContainer: FC<IProps> = () => {
-    const {searchRes,theme}=useAppContext()
+    const {searchedMovies,totalResults}=useAppSelector(state => state.movies)
+    const {theme}=useAppContext()
     return (
-        <div className={theme?css.SearchMoviesContainer:searchRes.length==0?dark.SearchMoviesContainerEmpty:dark.SearchMoviesContainer}>
+        <div className={theme?css.SearchMoviesContainer:searchedMovies.length==0?dark.SearchMoviesContainerEmpty:dark.SearchMoviesContainer}>
             <h2>Let`s find your movie!</h2>
             <SearchForm/>
-            {searchRes&&<MoviesList movies={searchRes}/>}
+            {totalResults!==0&&<div>All results:{totalResults}</div>}
+            {searchedMovies&&<MoviesList movies={searchedMovies}/>}
 
         </div>
     );

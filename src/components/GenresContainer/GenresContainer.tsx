@@ -6,19 +6,21 @@ import {GenresButton} from "./GenresButton";
 import {GenresMovieList} from "./GenresMovieList";
 import css from'./Genres.module.css'
 import dark from './GenresDark.module.css'
-import {useAppContext} from "../../hook";
+import {useAppContext, useAppDispatch, useAppSelector} from "../../hook";
+import {genreActions} from "../../store/slices/genreSlice";
 
 interface IProps extends PropsWithChildren {
 }
 const GenresContainer: FC<IProps> = () => {
-    const [genres, setGenres] = useState<IGenre[]>([])
-    const{theme}=useAppContext()
+    const {allGenres}=useAppSelector(state => state.genres);
+    const{theme}=useAppContext();
+    const dispatch=useAppDispatch();
     useEffect(() => {
-        genreService.getAll().then(({data})=>setGenres(data.genres))
+        dispatch(genreActions.getAll())
     }, []);
     return (
         <div>
-            <div className={theme?css.GenreBtnContainer:dark.GenreBtnContainer}>{genres.map(genre=><GenresButton key={genre.id} genre={genre}/>)}</div>
+            <div className={theme?css.GenreBtnContainer:dark.GenreBtnContainer}>{allGenres.map(genre=><GenresButton key={genre.id} genre={genre}/>)}</div>
             <GenresMovieList/>
         </div>
     );

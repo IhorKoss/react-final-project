@@ -2,12 +2,11 @@ import {FC, PropsWithChildren, useEffect, useState} from "react";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {useSearchParams} from "react-router-dom";
 
-import {IMovie, ISearch} from "../../interfaces";
-import {movieService} from "../../services";
-import {useAppContext, usePageQuery} from "../../hook";
+import {ISearch} from "../../interfaces";
+import {useAppContext, useAppDispatch, useAppSelector, usePageQuery} from "../../hook";
 import css from './Search.module.css'
 import dark from './SearchDark.module.css'
-import {SearchContainer} from "./SearchContainer";
+import {movieActions} from "../../store";
 
 interface IProps extends PropsWithChildren {
 
@@ -17,28 +16,21 @@ const SearchForm: FC<IProps> = () => {
     const {register,handleSubmit} =useForm<ISearch>({
         mode:'all'
     })
-    const [movies, setMovies] = useState<IMovie[]>([])
+    const dispatch = useAppDispatch();
     const [searched, setSearched] = useState<string>()
     const [, setQuery] = useSearchParams()
-    const {setSearchRes,theme}=useAppContext()
-    const [trigger, setTrigger] = useState<boolean>(false)
+    const {theme}=useAppContext()
+    const {trigger}=useAppSelector(state => state.movies)
     const {page,changePage}=usePageQuery();
 
 
     const find:SubmitHandler<ISearch>=(inp)=>{
         setSearched(inp.searchValue)
-        setTrigger(prevState => !prevState)
     }
     useEffect(() => {
-        movieService.search(searched,page).then(({data})=>{
-            setMovies(data.results);
-            setQuery({query:searched,page:page})
-        });
+        dispatch(movieActions.getSearched({searched,page}))
+        setQuery({query:searched,page:page})
     }, [trigger,page]);
-
-    useEffect(() => {
-        setSearchRes(movies)
-    }, [movies]);
     return (
         <div className={theme?css.SearchFormContainer:dark.SearchFormContainer}>
             <form onSubmit={handleSubmit(find)} className={theme?css.SearchForm:dark.SearchForm}>
