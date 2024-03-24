@@ -3,7 +3,7 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import {useSearchParams} from "react-router-dom";
 
 import {ISearch} from "../../interfaces";
-import {useAppContext, useAppDispatch, useAppSelector, usePageQuery} from "../../hook";
+import {useAppDispatch, useAppSelector, usePageQuery} from "../../hook";
 import css from './Search.module.css'
 import dark from './SearchDark.module.css'
 import {movieActions} from "../../store";
@@ -17,15 +17,15 @@ const SearchForm: FC<IProps> = () => {
         mode:'all'
     })
     const dispatch = useAppDispatch();
-    const [searched, setSearched] = useState<string>()
+    const {searched}=useAppSelector(state => state.movies)
     const [, setQuery] = useSearchParams()
-    const {theme}=useAppContext()
+    const{theme}=useAppSelector(state => state.theme)
     const {trigger}=useAppSelector(state => state.movies)
     const {page,changePage}=usePageQuery();
 
 
     const find:SubmitHandler<ISearch>=(inp)=>{
-        setSearched(inp.searchValue)
+        dispatch(movieActions.setSearched(inp.searchValue))
     }
     useEffect(() => {
         dispatch(movieActions.getSearched({searched,page}))

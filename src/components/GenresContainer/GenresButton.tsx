@@ -1,7 +1,7 @@
 import {FC, PropsWithChildren} from "react";
 
 import {IGenre} from "../../interfaces";
-import {useAppContext, useAppDispatch, usePageQuery} from "../../hook";
+import {useAppDispatch} from "../../hook";
 import css from'./Genres.module.css'
 import {genreActions} from "../../store/slices/genreSlice";
 

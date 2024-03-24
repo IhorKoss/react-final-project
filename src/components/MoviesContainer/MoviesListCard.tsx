@@ -5,7 +5,7 @@ import {IMovie} from "../../interfaces";
 import {StarsRating} from "../StarsRating/StarsRating";
 import css from './Movies.module.css'
 import dark from './MoviesDark.module.css'
-import {useAppContext} from "../../hook";
+import {useAppSelector} from "../../hook";
 
 interface IProps extends PropsWithChildren {
     movie:IMovie
@@ -14,7 +14,7 @@ interface IProps extends PropsWithChildren {
 const MoviesListCard: FC<IProps> = ({movie}) => {
     const {id,original_title,poster_path,vote_average,release_date}=movie;
     const poster_href=`https://image.tmdb.org/t/p/w500${poster_path}`
-    const {theme}=useAppContext()
+    const{theme}=useAppSelector(state => state.theme)
 
     const navigate = useNavigate()
     return (

@@ -1,7 +1,7 @@
 import {FC, PropsWithChildren, useEffect, useState} from "react";
 
 import {MoviesList} from "./MoviesList";
-import {useAppContext, useAppDispatch, useAppSelector, usePageQuery} from "../../hook";
+import {useAppDispatch, useAppSelector, usePageQuery} from "../../hook";
 import css from './Movies.module.css'
 import dark from './MoviesDark.module.css'
 import {movieActions} from "../../store";
@@ -13,7 +13,7 @@ interface IProps extends PropsWithChildren {
 const MovieContainer: FC<IProps> = () => {
     const{movies}=useAppSelector(state=>state.movies)
     const {page,changePage}=usePageQuery();
-    const {theme}=useAppContext()
+    const{theme}=useAppSelector(state => state.theme)
     const dispatch=useAppDispatch()
     useEffect(() => {
         dispatch(movieActions.getAll({page}))

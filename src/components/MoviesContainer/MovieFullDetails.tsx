@@ -3,7 +3,7 @@ import {IMovie} from "../../interfaces";
 import {StarsRating} from "../StarsRating/StarsRating";
 import css from './Movies.module.css'
 import dark from './MoviesDark.module.css'
-import {useAppContext} from "../../hook";
+import {useAppSelector} from "../../hook";
 
 interface IProps extends PropsWithChildren {
     movie:IMovie
@@ -12,7 +12,7 @@ interface IProps extends PropsWithChildren {
 const MovieFullDetails: FC<IProps> = ({movie}) => {
     const {original_title,poster_path,vote_average,adult,vote_count,tagline,overview,}=movie;
     const poster_href=`https://image.tmdb.org/t/p/w500${poster_path}`
-    const {theme}=useAppContext()
+    const{theme}=useAppSelector(state => state.theme)
 
     return (
         <div className={theme?css.MovieDetailsContainer:dark.MovieDetailsContainer}>

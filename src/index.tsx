@@ -3,7 +3,6 @@ import {RouterProvider} from "react-router-dom";
 
 import './index.css';
 import {router} from "./router";
-import {ContextProvider} from "./hoc";
 import {Provider} from "react-redux";
 import {store} from "./store";
 
@@ -12,9 +11,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <Provider store={store}>
-        <ContextProvider>
             <RouterProvider router={router}/>
-        </ContextProvider>
     </Provider>
 );
 

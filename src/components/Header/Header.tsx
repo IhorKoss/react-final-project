@@ -7,11 +7,13 @@ import css from './Header.module.css';
 import dark from './HeaderDark.module.css'
 import moon from '../images/moon.png'
 import sun from '../images/sun.png'
-import {useAppContext} from "../../hook";
+import {useAppDispatch, useAppSelector} from "../../hook";
+import {themeActions, themeReducer} from "../../store";
 const Header = () => {
-    const{theme,setTheme}=useAppContext()
+    const{theme}=useAppSelector(state => state.theme)
+    const dispatch=useAppDispatch();
     const themeChange=()=>{
-        setTheme(prevState => !prevState)
+        dispatch(themeActions.changeTheme())
     }
     return (
         <div  className={theme?css.Header:dark.Header}>

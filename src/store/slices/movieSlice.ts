@@ -7,7 +7,8 @@ interface IState{
     movies: IMovie[],
     movieById:IMovie,
     searchedMovies:IMovie[],
-    moviesByGenre:IMovie[]
+    moviesByGenre:IMovie[],
+    searched:string,
     totalPages:number,
     totalResults:number,
     trigger:boolean
@@ -17,6 +18,7 @@ const initialState: IState = {
     searchedMovies:[],
     moviesByGenre:[],
     movieById:null,
+    searched:null,
     totalPages:null,
     totalResults:null,
     trigger:null
@@ -77,6 +79,9 @@ const movieSlice=createSlice({
     reducers:{
         resetMovieById:(state)=>{
             state.movieById=null;
+        },
+        setSearched:(state,action)=>{
+            state.searched=action.payload;
         }
     },
     extraReducers:builder =>

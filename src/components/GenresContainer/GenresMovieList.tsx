@@ -1,9 +1,7 @@
-import {FC, PropsWithChildren, useEffect, useState} from "react";
+import {FC, PropsWithChildren, useEffect, } from "react";
 import {useSearchParams} from "react-router-dom";
 
-import {IMovie} from "../../interfaces";
-import {movieService} from "../../services";
-import {useAppContext, useAppDispatch, useAppSelector, usePageQuery} from "../../hook";
+import {useAppDispatch, useAppSelector, usePageQuery} from "../../hook";
 import {MoviesList} from "../MoviesContainer/MoviesList";
 import css from './Genres.module.css'
 import dark from './GenresDark.module.css'
@@ -19,7 +17,7 @@ const GenresMovieList: FC<IProps> = () => {
     const {with_genres}=useAppSelector(state => state.genres)
     const dispatch=useAppDispatch();
     const [,setQuery]=useSearchParams();
-    const {theme}=useAppContext()
+    const{theme}=useAppSelector(state => state.theme)
     const {page,changePage,defaultPage}=usePageQuery();
     useEffect(() => {
         dispatch(movieActions.getWithGenres({with_genres,page}))
