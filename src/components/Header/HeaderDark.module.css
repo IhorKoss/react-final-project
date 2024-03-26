@@ -2,7 +2,7 @@
     background-color: #050A30;
     color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 10vh;
     border-bottom: 0.2vh white solid;
@@ -11,9 +11,9 @@
 .Logo{
     height: 12vh;
 }
-a{
+.NavContainer a{
     text-decoration: none;
-    color: #2E8BC0;
+    color: white;
     font-size: 36px;
     display: flex;
     justify-content: center;
@@ -22,7 +22,7 @@ a{
 
 }
 
-a:hover{
+.NavContainer a:hover{
     border: 0.5vh #ffffff solid;
     box-sizing: border-box;
     transition: 500ms;
@@ -32,6 +32,8 @@ a:hover{
     height: 10vh;
     width: 35vw;
     display: flex;
+    margin-right: 4vw;
+
 
 }
 .ThemeSwitcher{

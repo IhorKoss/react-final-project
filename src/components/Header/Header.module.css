@@ -2,12 +2,19 @@
     background-color: #050A30;
     color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 10vh;
 }
+.imgContainer{
+    margin-left: 4vw;
+}
 .Logo{
     height: 12vh;
+}
+.Acc{
+    height: 10vh;
+    margin-bottom: 1vh;
 }
 a{
     text-decoration: none;
@@ -17,7 +24,6 @@ a{
     justify-content: center;
     align-items: center;
     transition: 500ms;
-
 }
 
 a:hover{
@@ -30,6 +36,7 @@ a:hover{
     height: 10vh;
     width: 35vw;
     display: flex;
+    margin-right: 4vw;
 
 }
 .ThemeSwitcher{
@@ -65,7 +72,4 @@ a:hover{
     width: 8vw;
     background-color: white;
     border-radius: 0 10px 10px 0;
-}
-.active{
-    background-color: rgba(46, 139, 192, 0.58);
 }

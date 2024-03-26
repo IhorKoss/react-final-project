@@ -23,8 +23,8 @@
 }
 .PageChange{
     margin: 2vh 0;
-    width: 30vw;
     color: white;
+    width: 30vw;
     justify-content: space-around;
     display:flex;
     flex-direction: row;
@@ -36,12 +36,12 @@
     justify-content: center;
     align-items: center;
     height: 5vh;
-    width: 10vw;
+    width: 5vw;
     background-color: #2E8BC0;
     border: none;
     border-radius: 10px;
     color: white;
-    font-size: 18px;
+    font-size: 30px;
 }
 .PageChange button:disabled{
     background-color: #003a60;

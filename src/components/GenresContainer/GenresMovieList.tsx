@@ -32,11 +32,11 @@ const GenresMovieList: FC<IProps> = () => {
             <div className={theme?css.PageChange:dark.PageChange}>
                 <button
                     onClick={() => changePage(JSON.stringify(parseInt(page) - 1) )}
-                    disabled={!(parseInt(page)-1)}>Previous</button>
+                    disabled={!(parseInt(page)-1)}>&lt;</button>
                 <div>{page}</div>
                 <button
                     onClick={() => changePage(JSON.stringify(parseInt(page) + 1) )}
-                    disabled={!(parseInt(page)+1)}>Next</button>
+                    disabled={!(parseInt(page)+1)}>&gt;</button>
             </div>
             {moviesByGenre&&<MoviesList movies={moviesByGenre}/>}
         </div>
