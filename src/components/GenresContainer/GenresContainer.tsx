@@ -1,4 +1,4 @@
-import {FC, PropsWithChildren, useEffect, useState} from "react";
+import {FC, PropsWithChildren, useEffect} from "react";
 
 import {GenresButton} from "./GenresButton";
 import {GenresMovieList} from "./GenresMovieList";

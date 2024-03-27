@@ -2,10 +2,10 @@ import {FC, PropsWithChildren} from "react";
 import {useNavigate} from "react-router-dom";
 
 import {IMovie} from "../../interfaces";
-import {StarsRating} from "../StarsRating/StarsRating";
+import {StarsRating} from "../StarsContainer/StarsRating";
 import css from './Movies.module.css'
 import dark from './MoviesDark.module.css'
-import no_img from '../images/imgnotavailable.png'
+import no_img from '../ImagesContainer/imgnotavailable.png'
 import {useAppSelector} from "../../hook";
 
 interface IProps extends PropsWithChildren {

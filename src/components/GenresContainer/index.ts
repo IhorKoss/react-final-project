@@ -1,2 +1,5 @@
 export * from "./GenresMovieList"
 export * from "./GenresContainer"
+export * from "./GenresButton"
+export * from "./Genres.module.css"
+export * from "./GenresDark.module.css"

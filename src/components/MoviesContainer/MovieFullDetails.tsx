@@ -1,6 +1,7 @@
 import {FC, PropsWithChildren} from "react";
+
 import {IMovie} from "../../interfaces";
-import {StarsRating} from "../StarsRating/StarsRating";
+import {StarsRating} from "../StarsContainer/StarsRating";
 import css from './Movies.module.css'
 import dark from './MoviesDark.module.css'
 import {useAppSelector} from "../../hook";

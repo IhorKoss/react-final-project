@@ -1,14 +1,14 @@
 import {NavLink} from "react-router-dom";
 
-import searchIcon from '../images/colourSearch.png'
-import whiteSearchIcon from '../images/whiteSearch.png'
-import appLogo from '../images/appLogo.png'
+import searchIcon from '../ImagesContainer/colourSearch.png'
+import whiteSearchIcon from '../ImagesContainer/whiteSearch.png'
+import appLogo from '../ImagesContainer/appLogo.png'
 import css from './Header.module.css';
 import dark from './HeaderDark.module.css'
-import moon from '../images/moon.png'
-import sun from '../images/sun.png'
-import darkAcc from '../images/colourAcc.png'
-import lightAcc from '../images/whiteAcc.png'
+import moon from '../ImagesContainer/moon.png'
+import sun from '../ImagesContainer/sun.png'
+import darkAcc from '../ImagesContainer/colourAcc.png'
+import lightAcc from '../ImagesContainer/whiteAcc.png'
 import {useAppDispatch, useAppSelector} from "../../hook";
 import {themeActions} from "../../store";
 const Header = () => {

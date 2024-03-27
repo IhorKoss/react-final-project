@@ -1,6 +1,6 @@
-import {FC, PropsWithChildren, useEffect, useState} from "react";
+import {FC, PropsWithChildren} from "react";
+
 import {IMovie} from "../../interfaces";
-import {movieService} from "../../services";
 import {MoviesListCard} from "./MoviesListCard";
 import css from './Movies.module.css'
 
